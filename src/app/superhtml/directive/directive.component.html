@@ -1,0 +1,88 @@
+<p>
+  Friends: {{friends}}
+</p>
+<ul>
+  <li *ngFor="let f of friends; let counter=index">
+    {{ f }}.Counter number {{counter}}
+    <button (click)="displayText(counter)"> Click {{ f }}</button>
+  </li>
+</ul>
+<hr>
+<div>Demo of *ngFor directive with json array:
+  <hr>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>City</th>
+        <th>STD</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let l of locations">
+        <td>{{ l.id }}</td>
+        <td>{{ l.city }}</td>
+        <td>{{ l.code }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br>
+<hr>
+<div>Excercise for *ngFor directive with Json array:
+  <hr>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>UserName</th>
+        <th>ZipCode</th>
+        <th>Latitude</th>
+        <th>Longitute</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let u of users">
+        <td>{{ u.id }}</td>
+        <td>{{ u.username }}</td>
+        <td>{{ u.address.zipcode }}</td>
+        <td>{{ u.address.geo.lat }}</td>
+        <td>{{ u.address.geo.lng }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<hr>
+<div>
+  Demo of *ngIf directive
+  <hr>
+  <button (click)="toggleCheck()">Toggle Check</button>
+  <br><br>
+  <div class="box" *ngIf="check"></div>
+  <br>
+  Demo of *ngIf directive with else criteria
+  <hr>
+  <button (click)="toggleElseCheck()">Toggle ElseCheck</button>
+  <br><br>
+  <div class="yesbox" *ngIf="checkelse; else elseTemplate">
+    I am here
+    <button>T</button>
+  </div>
+<ng-template #elseTemplate>
+  <div class="nobox">
+    Hip Hip Hurray
+  </div>
+</ng-template>
+<hr>
+<div>
+  Demo of *ngSwitchCase directive
+  <div [ngSwitch]="city">
+    <span *ngSwitchCase="'044'">Chennai</span>
+    <span *ngSwitchCase="'080'">Bangaluru</span>
+    <span *ngSwitchCase="'033'">Kolkata</span>
+    <span *ngSwitchCase="'022'">Mumbai</span>
+    <span *ngSwitchDefault>Code/City not available</span>
+  </div>
+</div>
+</div>
+{{displayText()}}
