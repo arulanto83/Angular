@@ -1,0 +1,21 @@
+<div class="parent">
+ <p>I am Consume Parent Component!</p>
+ Value of name in parent: {{name}}
+ 
+<div class="child">
+I am child
+<cts-child [sendName]="name" (sendToParent)="receivedNewName($event)"></cts-child>
+</div>
+<div>
+  <a routerLink="Child1">Child1</a> &nbsp;
+  <a routerLink="Child2">Child2</a>
+  <router-outlet></router-outlet>
+  <!-- <ol>
+    <li class="child1">
+      I am a Child 1 -> <cts-consumechild1></cts-consumechild1>
+    </li>
+    <li class="child2">
+      I am child 2 -> <cts-consumechild2></cts-consumechild2>
+    </li>
+  </ol> -->
+</div>

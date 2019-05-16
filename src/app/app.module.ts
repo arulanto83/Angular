@@ -18,6 +18,11 @@ import { DescriptionComponent } from './assignment/allcomponents/description/des
 import { DirectiveComponent } from './superhtml/directive/directive.component';
 import { InbuildPipesComponent } from './pipes/inbuild-pipes/inbuild-pipes.component';
 import { BadrouteComponent } from './notfound/badroute/badroute.component';
+import { ConsumeparentComponent } from './consume/consumeparent/consumeparent.component';
+import { Consumechild1Component } from './consume/consumechild1/consumechild1.component';
+import { Consumechild2Component } from './consume/consumechild2/consumechild2.component';
+import { ChildComponent } from './consume/child/child.component';
+import { FormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -35,11 +40,16 @@ import { BadrouteComponent } from './notfound/badroute/badroute.component';
     DescriptionComponent,
     DirectiveComponent,
     InbuildPipesComponent,
-    BadrouteComponent
+    BadrouteComponent,
+    ConsumeparentComponent,
+    Consumechild1Component,
+    Consumechild2Component,
+    ChildComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     RouterModule.forRoot([
       {
         path:'', redirectTo: 'pipes', pathMatch: 'full'
@@ -73,6 +83,19 @@ import { BadrouteComponent } from './notfound/badroute/badroute.component';
       {
         path:'pipes', component: InbuildPipesComponent
       },
+      {
+        path:'consume', component: ConsumeparentComponent,
+        children:[
+          {
+            path:'Child1',
+            component:Consumechild1Component
+          },
+          {
+            path:'Child2',
+            component:Consumechild2Component
+          }
+        ]
+      },      
       {
         path: '**', component: BadrouteComponent
       }

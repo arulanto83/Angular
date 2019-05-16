@@ -258,8 +258,8 @@ export class DirectiveComponent implements OnInit {
     console.log(this.check);
   }
   displayText=function(captured) {
-    //return "Called from function!!! for " + captured;
-    //console.log("Called from function!!! for " + captured)
+    //return "Called from function!!! for " + captur
+    console.log("Called from function!!! for " + captured)
     this.friends.splice(captured,1);
     //console.log(this.friends);
   }
