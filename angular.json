@@ -132,5 +132,13 @@
       }
     }
   },
-  "defaultProject": "AngularLearning"
+  "defaultProject": "AngularLearning",
+  "schematics": {
+    "@schematics/angular": {
+      "component": {
+        "css": true,
+        "spec": true
+      }
+    }
+  }
 }
