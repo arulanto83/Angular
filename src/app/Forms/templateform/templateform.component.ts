@@ -11,6 +11,7 @@ submitDetail=function(hf){
   console.log("Form Value: " + JSON.stringify(hf.value));
   console.log("Valid Status: " + JSON.stringify(hf.valid));
   console.log("Invalid Status: " + JSON.stringify(hf.invalid));
+  console.log("Fullname status: "  + JSON.stringify(hf.controls.fn.invalid))
 }
   constructor() { }
 

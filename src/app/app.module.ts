@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from "@angular/router";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -22,13 +23,14 @@ import { ConsumeparentComponent } from './consume/consumeparent/consumeparent.co
 import { Consumechild1Component } from './consume/consumechild1/consumechild1.component';
 import { Consumechild2Component } from './consume/consumechild2/consumechild2.component';
 import { ChildComponent } from './consume/child/child.component';
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { Nospec10Component } from './delete/nospec10/nospec10.component';
 import { Flatcomponent1Component } from './delete/componentNotInFolder/flatcomponent1.component';
 import { Flatcomponent2Component } from './delete/componentNotInFolder/flatcomponent2/flatcomponent2.component';
 import { FlatcomponentComponent } from './delete/componentNotInFolder/flatcomponent.component';
 import { TemplateformComponent } from './Forms/templateform/templateform.component';
 import { ReactiveFormsComponent } from './Forms/reactive-forms/reactive-forms.component';
+import { AnimationComponent } from './animate/animation/animation.component';
 
 @NgModule({
   declarations: [
@@ -56,12 +58,16 @@ import { ReactiveFormsComponent } from './Forms/reactive-forms/reactive-forms.co
     Flatcomponent2Component,
     FlatcomponentComponent,
     TemplateformComponent,
-    ReactiveFormsComponent
+    ReactiveFormsComponent,
+    AnimationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+
     RouterModule.forRoot([
       {
         path:'', redirectTo: 'pipes', pathMatch: 'full'
@@ -115,7 +121,11 @@ import { ReactiveFormsComponent } from './Forms/reactive-forms/reactive-forms.co
       {
         path: 'reactive',
         component:ReactiveFormsComponent
-      },     
+      },  
+      {
+          path: 'Animation',
+          component:AnimationComponent
+      },   
       {
         path: '**', component: BadrouteComponent
       }

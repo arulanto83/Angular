@@ -3,7 +3,7 @@
   <br>
   <form #hobbyForm="ngForm" (ngSubmit)="submitDetail(hobbyForm)">
       <label contenteditable="true">Name:</label>
-      <input type="text" name="fn" [(ngModel)]="fullname" required pattern="[a-zA-Z]{3,15}"> {{fullname}}
+      <input type="text" name="fn" [(ngModel)]="fullname" pattern="[a-zA-Z]{3,15}" required> {{fullname}}
       <span [ngStyle]="{color:hobbyForm.controls.fn.invalid?'red':'white'}">Minimum length is 3. Max length is 65, Only alphabets</span>
       <br>
       <label>Age:</label>
