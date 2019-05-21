@@ -1,0 +1,34 @@
+<div>
+  Remote Users:
+</div>
+
+<div>
+  <ol>
+    <li *ngFor="let u of users">
+      {{u.username}} from {{u.city}}
+    </li>
+  </ol>
+</div>
+
+<div>Excercise with REST API:
+  <hr>
+  <table border="1">
+    <thead>
+      <tr style="font-weight: bold">
+        <td>Name</td>
+        <td>City</td>
+        <td>Latitude</td>
+        <td>Longitude</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let u of users">
+        <td>{{u.username}}</td>
+        <td>{{u.address.city}}</td>
+        <td>{{u.address.geo.lat}}</td>
+        <td>{{u.address.geo.lng}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+</div>

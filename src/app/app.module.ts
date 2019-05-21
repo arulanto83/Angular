@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from "@angular/router";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { HttpClientModule } from "@angular/common/http";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,6 +32,7 @@ import { FlatcomponentComponent } from './delete/componentNotInFolder/flatcompon
 import { TemplateformComponent } from './Forms/templateform/templateform.component';
 import { ReactiveFormsComponent } from './Forms/reactive-forms/reactive-forms.component';
 import { AnimationComponent } from './animate/animation/animation.component';
+import { RemoteComponent } from './restapi/remote/remote.component';
 
 @NgModule({
   declarations: [
@@ -59,7 +61,8 @@ import { AnimationComponent } from './animate/animation/animation.component';
     FlatcomponentComponent,
     TemplateformComponent,
     ReactiveFormsComponent,
-    AnimationComponent
+    AnimationComponent,
+    RemoteComponent
   ],
   imports: [
     BrowserModule,
@@ -67,6 +70,7 @@ import { AnimationComponent } from './animate/animation/animation.component';
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    HttpClientModule,
 
     RouterModule.forRoot([
       {
@@ -125,7 +129,11 @@ import { AnimationComponent } from './animate/animation/animation.component';
       {
           path: 'Animation',
           component:AnimationComponent
-      },   
+      }, 
+      {
+        path: 'remote',
+        component:RemoteComponent
+    },    
       {
         path: '**', component: BadrouteComponent
       }
